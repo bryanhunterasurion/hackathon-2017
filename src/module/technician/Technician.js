@@ -8,7 +8,7 @@ class Technician extends React.Component {
 
         super();
 
-        this.respondToOrder = this.respondToOrder.bind(this);
+        this.acceptOrder = this.acceptOrder.bind(this);
 
         this.state = {
             orders: {}
@@ -16,13 +16,13 @@ class Technician extends React.Component {
 
     }
 
-    respondToOrder(key) {
+    acceptOrder(key) {
 
         const orders = {...this.state.orders};
 
         orders[key] = {
-            name: `Testing ${orders.name}`,
-            requestedDeliveryTime: Date.now()
+            Status: "Unavailable",
+            ExpertName: "Nick Choate"
         };
 
         this.setState({orders});
@@ -47,7 +47,7 @@ class Technician extends React.Component {
             <div>
                 Technician App
                 <AvailableOrders orders={this.state.orders}
-                                 respondToOrder={this.respondToOrder}
+                                 acceptOrder={this.acceptOrder}
                 />
             </div>
         );

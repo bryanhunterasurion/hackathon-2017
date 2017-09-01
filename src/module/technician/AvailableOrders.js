@@ -7,6 +7,15 @@ class AvailableOrders extends React.Component {
         super();
 
         this.renderOrder = this.renderOrder.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+    handleSubmit(event,key) {
+
+        event.preventDefault();
+
+        this.props.acceptOrder(key);
 
     }
 
@@ -14,19 +23,31 @@ class AvailableOrders extends React.Component {
 
         const order = this.props.orders[key];
 
+        const hideOrderAccept = order.Status === 'Unavailable';
+
         return (
-            <div>
-                Order: {order.name}
-            </div>
+            <li key={key}>
+                <form onSubmit={(event) => this.handleSubmit(event,key)}>
+                    <label>
+                        Customer Name: {order.CustomerName}
+                    </label>
+                    <br/>
+                    <label>
+                        Status: {order.Status}
+                    </label>
+                    <br/>
+                    <input type="submit" value="Accept" hidden={hideOrderAccept} />
+                </form>
+            </li>
         );
 
     }
 
     render() {
         return (
-            <div>
+            <ul>
                 {Object.keys(this.props.orders).map(this.renderOrder)}
-            </div>
+            </ul>
         );
     }
 
