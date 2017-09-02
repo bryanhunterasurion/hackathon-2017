@@ -25,22 +25,39 @@ class AvailableOrders extends React.Component {
 
         const hideOrderAccept = order.Status === 'Unavailable';
 
-        return (
-            <li key={key}>
-                <form onSubmit={(event) => this.handleSubmit(event,key)}>
-                    <label>
-                        Customer Name: {order.CustomerName}
-                    </label>
-                    <br/>
-                    <label>
-                        Status: {order.Status}
-                    </label>
-                    <br/>
-                    <input type="submit" value="Accept" hidden={hideOrderAccept} />
-                </form>
-            </li>
-        );
-
+        if(order.Status === 'Available') {
+            return (
+                <li key={key}>
+                    <form onSubmit={(event) => this.handleSubmit(event,key)}>
+                        <label>
+                            Customer Name: {order.CustomerName}
+                        </label>
+                        <br/>
+                        <label>
+                            Customer Address: {order.Address}
+                        </label>
+                        <br/>
+                        <label>
+                            Purchases: {order.Purchases}
+                        </label>
+                        <br/>
+                        <label>
+                            Pickup Address: {order.PickupAddress}
+                        </label>
+                        <br/>
+                        <label>
+                            Info: {order.Info}
+                        </label>
+                        <br/>
+                        <label>
+                            Status: {order.Status}
+                        </label>
+                        <br/>
+                        <input type="submit" value="Accept Work" hidden={hideOrderAccept} />
+                    </form>
+                </li>
+            );
+        }
     }
 
     render() {
