@@ -23,8 +23,6 @@ class AvailableOrders extends React.Component {
 
         const order = this.props.orders[key];
 
-        const hideOrderAccept = order.Status === 'Unavailable';
-
         if(order.Status === 'Available') {
             return (
                 <li key={key}>
@@ -53,7 +51,7 @@ class AvailableOrders extends React.Component {
                             Status: {order.Status}
                         </label>
                         <br/>
-                        <input type="submit" value="Accept Work" hidden={hideOrderAccept} />
+                        <input type="submit" value="Accept Work" />
                     </form>
                 </li>
             );
