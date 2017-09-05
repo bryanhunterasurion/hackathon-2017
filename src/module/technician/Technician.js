@@ -1,6 +1,8 @@
 import React from 'react';
 import base from '../../base';
-import AvailableOrders from './AvailableOrders';
+import AvailableOrders from './order/AvailableOrders';
+import TechnicianHeader from './header/TechnicianHeader';
+import '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css';
 
 class Technician extends React.Component {
 
@@ -43,12 +45,21 @@ class Technician extends React.Component {
     }
 
     render() {
+
+        const style = {
+            height: '60px'
+        }
+
         return (
-            <div>
-                Technician App
-                <AvailableOrders orders={this.state.orders}
-                                 acceptOrder={this.acceptOrder}
-                />
+            <div className="slds-grid slds-grid_vertical">
+                <div className="slds-container_fluid" style={style}>
+                    <TechnicianHeader/>
+                </div>
+                <div className="slds-container_fluid">
+                    <AvailableOrders orders={this.state.orders}
+                                     acceptOrder={this.acceptOrder}
+                    />
+                </div>
             </div>
         );
     }
