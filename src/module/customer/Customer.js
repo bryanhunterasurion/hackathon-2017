@@ -22,7 +22,7 @@ class Customer extends React.Component {
 
     const orders = { ...this.state.orders };
 
-    orders[Math.floor(Math.random() * 20)] = {
+    orders[Math.floor(Math.random() * 10000)] = {
       CustomerName: this.name.value,
       Address: this.address.value,
       Purchases: this.purchases.value,
