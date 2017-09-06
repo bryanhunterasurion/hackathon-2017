@@ -11,6 +11,7 @@ class Technician extends React.Component {
         super();
 
         this.acceptOrder = this.acceptOrder.bind(this);
+        this.declineOrder = this.declineOrder.bind(this);
 
         this.state = {
             orders: {}
@@ -18,13 +19,26 @@ class Technician extends React.Component {
 
     }
 
-    acceptOrder(key) {
+    acceptOrder(key, expertName) {
 
         const orders = {...this.state.orders};
 
         orders[key] = {
             Status: "Unavailable",
-            ExpertName: "Nick Choate"
+            ExpertName: expertName
+        };
+
+        this.setState({orders});
+
+    }
+
+    declineOrder(key) {
+
+        const orders = {...this.state.orders};
+
+        orders[key] = {
+            ExpertName: "",
+            Status: "Available"
         };
 
         this.setState({orders});
@@ -58,6 +72,8 @@ class Technician extends React.Component {
                 <div className="slds-container_fluid">
                     <AvailableOrders orders={this.state.orders}
                                      acceptOrder={this.acceptOrder}
+                                     declineOrder={this.declineOrder}
+                                     expertName="Zach Boyd"
                     />
                 </div>
             </div>

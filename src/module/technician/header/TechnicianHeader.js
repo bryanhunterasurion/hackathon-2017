@@ -14,6 +14,7 @@ class TechnicianHeader extends React.Component {
                         </div>
                     </div>
                     <ul className="slds-global-header__item slds-grid slds-grid_vertical-align-center">
+                        {/*
                         <li className="slds-dropdown-trigger slds-dropdown-trigger_click slds-p-horizontal_xxx-small">
                             <button className="slds-button slds-button_icon slds-button_icon slds-button_icon-small slds-button_icon-container slds-button_icon-x-small slds-global-header__button_icon-actions slds-m-horizontal_xx-small" title="Global Actions">
                                 <svg className="slds-button__icon slds-global-header__icon" aria-hidden="true">
@@ -38,6 +39,7 @@ class TechnicianHeader extends React.Component {
                                 <span className="slds-assistive-text">Setup</span>
                             </button>
                         </li>
+                        */}
                         <li className="slds-dropdown-trigger slds-dropdown-trigger_click">
                             <button className="slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-header__button_icon" title="Notifications">
                                 <svg className="slds-button__icon slds-global-header__icon" aria-hidden="true">

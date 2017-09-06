@@ -13,11 +13,16 @@ class AvailableOrders extends React.Component {
 
     }
 
-    handleSubmit(event,key) {
+    handleSubmit(event,key,isAssignedToMe) {
 
         event.preventDefault();
 
-        this.props.acceptOrder(key);
+        if(isAssignedToMe) {
+            this.props.declineOrder(key);
+        }
+        else {
+            this.props.acceptOrder(key,this.props.expertName);
+        }
 
     }
 
@@ -32,14 +37,21 @@ class AvailableOrders extends React.Component {
             logo = TargetLogo;
         }
 
-        if(order.Status === 'Available') {
+        const expertName = this.props.expertName;
+
+        const orderAvailable = (order.Status === 'Available');
+        const isAssignedToMe = (order.ExpertName === expertName);
+        const assignLinkIcon = isAssignedToMe ? "#close" : "#like";
+
+        if(orderAvailable || isAssignedToMe) {
+
             return (
                 <li key={key} className="slds-feed__item">
                     <article className="slds-post">
                         <header className="slds-post__header slds-media">
                             <div className="slds-media__figure">
                                 <a href="javascript:void(0);" className="slds-avatar slds-avatar_circle slds-avatar_large">
-                                    <img src={logo} />
+                                    <img src={logo} alt={order.Retailer} />
                                 </a>
                             </div>
                             <div className="slds-media__body">
@@ -56,11 +68,10 @@ class AvailableOrders extends React.Component {
                             </div>
                             <div className="slds-media__body">
                                 <div className="slds-grid slds-grid_align-end">
-                                    <button onClick={(event) => this.handleSubmit(event,key)} title="Like this item" className="slds-button_reset slds-post__footer-action" aria-pressed="false">
+                                    <button onClick={(event) => this.handleSubmit(event,key,isAssignedToMe)} title="Like this item" className="slds-button_reset slds-post__footer-action" aria-pressed="false">
                                         <svg className="slds-icon slds-icon-text-default slds-icon_x-small slds-align-middle" aria-hidden="true">
-                                            <use xlinkHref="symbols.svg#like"></use>
+                                            <use xlinkHref={"symbols.svg" + assignLinkIcon}></use>
                                         </svg>
-                                        Accept
                                     </button>
                                 </div>
                             </div>
@@ -73,6 +84,7 @@ class AvailableOrders extends React.Component {
                     </article>
                 </li>
             );
+
         }
     }
 
