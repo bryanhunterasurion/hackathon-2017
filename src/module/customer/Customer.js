@@ -22,7 +22,7 @@ class Customer extends React.Component {
 
     const orders = { ...this.state.orders };
 
-    orders[Math.floor(Date.now() / 1000)] = {
+    orders[Math.floor(Date.now())] = {
       CustomerName: this.name.value,
       Address: this.address.value,
       Purchases: this.purchases.value,
