@@ -29,7 +29,7 @@ class Technician extends React.Component {
         };
 
         this.setState({orders}, () => {
-            this.context.router.history.push(`/technician/order/${key}`);
+            this.context.router.history.push(`/technician/orders/${key}`);
         });
 
     }

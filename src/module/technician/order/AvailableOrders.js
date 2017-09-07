@@ -72,7 +72,7 @@ class AvailableOrders extends React.Component {
                                 <div className="slds-grid slds-grid_align-end">
                                     <button onClick={(event) => this.handleSubmit(event,key,isAssignedToMe)} title="Like this item" className="slds-button_reset slds-post__footer-action" aria-pressed="false">
                                         <svg className="slds-icon slds-icon-text-default slds-icon_x-small slds-align-middle" aria-hidden="true">
-                                            <use xlinkHref={"symbols.svg" + assignLinkIcon}></use>
+                                            <use xlinkHref={"/symbols.svg" + assignLinkIcon}></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -95,7 +95,7 @@ class AvailableOrders extends React.Component {
         return (
             <div className="slds-feed">
                 <ul className="slds-feed__list">
-                    {Object.keys(this.props.orders).reverse().map(this.renderOrder)}
+                    {Object.keys(this.props.orders).map(this.renderOrder)}
                 </ul>
             </div>
         );

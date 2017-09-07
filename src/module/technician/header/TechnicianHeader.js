@@ -43,7 +43,7 @@ class TechnicianHeader extends React.Component {
                         <li className="slds-dropdown-trigger slds-dropdown-trigger_click">
                             <button className="slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-header__button_icon" title="Notifications">
                                 <svg className="slds-button__icon slds-global-header__icon" aria-hidden="true">
-                                    <use xlinkHref="symbols.svg#notification"></use>
+                                    <use xlinkHref="/symbols.svg#notification"></use>
                                 </svg>
                                 <span className="slds-assistive-text">Notifications</span>
                             </button>
@@ -51,7 +51,7 @@ class TechnicianHeader extends React.Component {
                         <li className="slds-dropdown-trigger slds-dropdown-trigger_click slds-m-left_x-small">
                             <button className="slds-button" title="person name" aria-haspopup="true">
                                   <span className="slds-avatar slds-avatar_circle slds-avatar_medium">
-                                    <img src={Avatar} />
+                                    <img src={Avatar} alt="Expert" />
                                   </span>
                             </button>
                         </li>
