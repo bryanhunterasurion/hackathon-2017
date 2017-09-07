@@ -1,8 +1,8 @@
 // This is just some sample data so you don't have to think of your own!
 module.exports = {
 
-    "1504803069853": {
-        Address: '1 Winner Circle, Apt #1, Nashville, TN',
+    "1504803472225": {
+        Address: '#1 Winner Circle, Nashville, TN',
         CustomerName: 'Bryan Hunter',
         ExpertName: '',
         Info: '',
@@ -15,7 +15,7 @@ module.exports = {
     },
 
     "1504803472225": {
-        Address: '490 Vacation Blvd., Nashville, TN',
+        Address: '2 Vacation Blvd., Nashville, TN',
         CustomerName: 'Drew Martin',
         ExpertName: '',
         Info: '',
