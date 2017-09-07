@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 import WalmartLogo from './walmart.jpg';
 import TargetLogo from './target.jpeg';
 
@@ -14,7 +13,7 @@ class AvailableOrders extends React.Component {
 
     }
 
-    handleSubmit(event,key,isAssignedToMe, history) {
+    handleSubmit(event,key,isAssignedToMe) {
 
         event.preventDefault();
 
@@ -24,8 +23,6 @@ class AvailableOrders extends React.Component {
         else {
 
             this.props.acceptOrder(key,this.props.expertName);
-
-            history.push(`/technician/order/${key}`);
 
         }
 
@@ -47,18 +44,6 @@ class AvailableOrders extends React.Component {
         const orderAvailable = (order.Status === 'Available');
         const isAssignedToMe = (order.ExpertName === expertName);
         const assignLinkIcon = isAssignedToMe ? "#close" : "#like";
-
-        const actionButton = (
-            <Route render={({history}) => (
-                <button onClick={(event) => this.handleSubmit(event,key,isAssignedToMe,history)} title="Like this item" className="slds-button_reset slds-post__footer-action" aria-pressed="false">
-                    <svg className="slds-icon slds-icon-text-default slds-icon_x-small slds-align-middle" aria-hidden="true">
-                        <use xlinkHref={"symbols.svg" + assignLinkIcon}></use>
-                    </svg>
-                </button>
-                )}
-            />
-        )
-
 
         if(orderAvailable || isAssignedToMe) {
 
@@ -85,7 +70,11 @@ class AvailableOrders extends React.Component {
                             </div>
                             <div className="slds-media__body">
                                 <div className="slds-grid slds-grid_align-end">
-                                    {actionButton}
+                                    <button onClick={(event) => this.handleSubmit(event,key,isAssignedToMe)} title="Like this item" className="slds-button_reset slds-post__footer-action" aria-pressed="false">
+                                        <svg className="slds-icon slds-icon-text-default slds-icon_x-small slds-align-middle" aria-hidden="true">
+                                            <use xlinkHref={"symbols.svg" + assignLinkIcon}></use>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                         </header>
