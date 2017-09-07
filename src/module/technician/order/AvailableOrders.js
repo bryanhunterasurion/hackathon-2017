@@ -95,7 +95,7 @@ class AvailableOrders extends React.Component {
         return (
             <div className="slds-feed">
                 <ul className="slds-feed__list">
-                    {Object.keys(this.props.orders).map(this.renderOrder)}
+                    {Object.keys(this.props.orders).reverse().map(this.renderOrder)}
                 </ul>
             </div>
         );
