@@ -1,6 +1,7 @@
 import React from 'react';
 import base from '../../base';
 import MapImg from './map.png';
+import moment from 'moment';
 import '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css';
 
 class CustomerTimeline extends React.Component {
@@ -13,12 +14,13 @@ class CustomerTimeline extends React.Component {
 
     render() {
       const order = this.props.order;
-      const timeline = order.timeline;
+      const timeline = order.Timeline;
       if(!timeline) {
         return (
           <div>Searching for expert...</div>
         );
       }
+
       return (
         <ul className="slds-timeline">
             {this.renderTimelineItem("Complete", timeline)}
@@ -81,7 +83,7 @@ class CustomerTimeline extends React.Component {
               </div>
               <div className="slds-media__figure slds-media__figure_reverse">
                 <div className="slds-timeline__actions">
-                  <p className="slds-timeline__date">{timeline[status]}</p>
+                  <p className="slds-timeline__date">{moment(timeline[status]).tz("America/Chicago").format('h:mm:ss a')}</p>
                 </div>
               </div>
             </div>

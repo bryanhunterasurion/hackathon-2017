@@ -37,26 +37,26 @@ class CustomerTracker extends React.Component {
 
       if(orderKey) {
         order = this.state.orders[orderKey];
-        timeline = order.timeline;
+        // order = this.state.orders["1504809420"];
+        timeline = order.Timeline;
       }
 
       if(!timeline) {
         timeline = {};
-        let time1 = moment().subtract('3', 'hours');
-        let time2 = moment().subtract('2', 'hours');
-        let time3 = moment().subtract('1', 'hours');
-        let time4 = moment();
-        let format = 'h:mm:ss a';
+        let time1 = moment().subtract('3', 'hours').unix();
+        let time2 = moment().subtract('2', 'hours').unix();
+        let time3 = moment().subtract('1', 'hours').unix();
+        let time4 = moment().unix();
 
-        timeline["Accepted"] = time1.format(format);
-        timeline["Picking Up"] = time2.format(format);
-        timeline["Delivering"] = time3.format(format);
-        timeline["Complete"] = time4.format(format);
+        timeline["Accepted"] = time1;
+        timeline["Picking Up"] = time2;
+        timeline["Delivering"] = time3;
+        timeline["Complete"] = time4;
       }
 
       order = order || {};
 
-      order.timeline = timeline;
+      order.Timeline = timeline;
 
       const style = {
         padding: "10px 10px 10px 10px"
