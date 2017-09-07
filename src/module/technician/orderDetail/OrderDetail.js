@@ -62,8 +62,68 @@ class OrderDetail extends React.Component {
                     <TechnicianHeader/>
                 </div>
                 <div className="slds-container_fluid">
-                    <div className="slds-grid">
-                        <div className="demo-only slds-grid" style={style}>
+                    <div className="slds-panel__section">
+                        <div className="slds-path-coach">
+                            <div className="slds-grid">
+                                <div className="slds-tabs_path" role="application">
+                                    <ul className="slds-tabs_path__nav" role="listbox">
+                                        <li className="slds-tabs_path__item slds-is-complete"
+                                            role="presentation">
+                                            <a aria-selected="false" className="slds-tabs_path__link"
+                                               href="javascript:void(0);"
+                                               id="path-2" role="option" tabIndex="-1">
+                                                        <span className="slds-tabs_path__stage">
+                                                            <svg className="slds-icon slds-icon_x-small"
+                                                                 aria-hidden="true">
+                                                            <use
+                                                                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"/>
+                                                            </svg>
+                                                            <span className="slds-assistive-text">Stage Complete</span>
+                                                        </span>
+                                                <span
+                                                    className="slds-tabs_path__title">Picking Up</span>
+                                            </a>
+                                        </li>
+                                        <li className="slds-tabs_path__item slds-is-current"
+                                            role="presentation">
+                                            <a aria-selected="true" className="slds-tabs_path__link"
+                                               href="javascript:void(0);"
+                                               id="path-3" role="option" tabIndex="0">
+                                                        <span className="slds-tabs_path__stage">
+                                                                <svg className="slds-icon slds-icon_x-small"
+                                                                     aria-hidden="true">
+                                                                <use
+                                                                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"/>
+                                                                </svg>
+                                                                <span
+                                                                    className="slds-assistive-text">Current Stage:</span>
+                                                        </span>
+                                                <span
+                                                    className="slds-tabs_path__title">Delivering</span>
+                                            </a>
+                                        </li>
+                                        <li className="slds-tabs_path__item slds-is-incomplete"
+                                            role="presentation">
+                                            <a aria-selected="false" className="slds-tabs_path__link"
+                                               href="javascript:void(0);"
+                                               id="path-4" role="option" tabIndex="-1">
+                                                        <span className="slds-tabs_path__stage">
+                                                          <svg className="slds-icon slds-icon_x-small"
+                                                               aria-hidden="true">
+                                                            <use
+                                                                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"/>
+                                                              </svg>
+                                                              </span>
+                                                <span className="slds-tabs_path__title">Complete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                        <div className="demo-only slds-grid" >
                             <div className="slds-panel slds-grid slds-grid_vertical slds-nowrap">
                                 <div className="slds-form slds-form_stacked slds-grow slds-scrollable_y">
 
@@ -114,91 +174,14 @@ class OrderDetail extends React.Component {
                                         </ul>
                                     </div>
 
-                                    <div className="slds-panel__section">
-                                        <h3 className="slds-text-heading_small slds-m-bottom_medium">Current Status</h3>
-                                        <div className="slds-path-coach">
-                                            <div className="slds-grid">
-                                                <div className="slds-tabs_path" role="application">
-                                                    <ul className="slds-tabs_path__nav" role="listbox">
-                                                        <li className="slds-tabs_path__item slds-is-complete slds-is-complete "
-                                                            role="presentation">
-                                                            <a aria-selected="false" className="slds-tabs_path__link"
-                                                               href="javascript:void(0);"
-                                                               id="path-1" role="option" tabIndex="-1">
-                                                        <span className="slds-tabs_path__stage">
-                                                            <svg className="slds-icon slds-icon_x-small"
-                                                                 aria-hidden="true">
-                                                            <use
-                                                                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"/>
-                                                            </svg>
-                                                            <span className="slds-assistive-text">Stage Complete</span>
-                                                        </span>
-                                                                <span className="slds-tabs_path__title">Accepted</span>
-                                                            </a>
-                                                        </li>
-                                                        <li className="slds-tabs_path__item slds-is-complete"
-                                                            role="presentation">
-                                                            <a aria-selected="false" className="slds-tabs_path__link"
-                                                               href="javascript:void(0);"
-                                                               id="path-2" role="option" tabIndex="-1">
-                                                        <span className="slds-tabs_path__stage">
-                                                            <svg className="slds-icon slds-icon_x-small"
-                                                                 aria-hidden="true">
-                                                            <use
-                                                                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"/>
-                                                            </svg>
-                                                            <span className="slds-assistive-text">Stage Complete</span>
-                                                        </span>
-                                                                <span
-                                                                    className="slds-tabs_path__title">Picking Up</span>
-                                                            </a>
-                                                        </li>
-                                                        <li className="slds-tabs_path__item slds-is-current"
-                                                            role="presentation">
-                                                            <a aria-selected="true" className="slds-tabs_path__link"
-                                                               href="javascript:void(0);"
-                                                               id="path-3" role="option" tabIndex="0">
-                                                        <span className="slds-tabs_path__stage">
-                                                                <svg className="slds-icon slds-icon_x-small"
-                                                                     aria-hidden="true">
-                                                                <use
-                                                                    xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"/>
-                                                                </svg>
-                                                                <span
-                                                                    className="slds-assistive-text">Current Stage:</span>
-                                                        </span>
-                                                                <span
-                                                                    className="slds-tabs_path__title">Delivering</span>
-                                                            </a>
-                                                        </li>
-                                                        <li className="slds-tabs_path__item slds-is-incomplete"
-                                                            role="presentation">
-                                                            <a aria-selected="false" className="slds-tabs_path__link"
-                                                               href="javascript:void(0);"
-                                                               id="path-4" role="option" tabIndex="-1">
-                                                        <span className="slds-tabs_path__stage">
-                                                          <svg className="slds-icon slds-icon_x-small"
-                                                               aria-hidden="true">
-                                                            <use
-                                                                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"/>
-                                                              </svg>
-                                                              </span>
-                                                                <span className="slds-tabs_path__title">Complete</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
 
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
 
 
                     </div>
-                </div>
+
             </div>
     );
     }
