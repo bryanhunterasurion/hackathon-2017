@@ -30,7 +30,8 @@ class Customer extends React.Component {
       PickupAddress: this.pickupAddress.value,
       Info: this.info.value,
       Status: 'Available',
-      OrderDate: moment().tz("America/Chicago").format("LLL")
+      OrderDate: moment().tz("America/Chicago").format("LLL"),
+      ProductImage: 'https://i5.walmartimages.com/asr/4596e3f2-97fe-42da-ae2d-6441664f7116_1.d72c99548dfb825575227c00c2f1b96d.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF'
     };
 
     this.setState({ orders });

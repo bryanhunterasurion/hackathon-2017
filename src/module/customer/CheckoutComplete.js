@@ -47,7 +47,7 @@ class CustomerCheckout extends React.Component {
           </div>
           <div className="slds-container_fluid" style={successStyle}>
             <img src={Checkbox} alt="" />
-            <p>Confirmation #23750237609<p/></p> <br/>
+            <p>Confirmation #23750237609</p> <br/>
           </div>
       </div>
     );
