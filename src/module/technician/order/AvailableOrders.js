@@ -1,6 +1,7 @@
 import React from 'react';
 import WalmartLogo from './walmart.jpg';
 import TargetLogo from './target.jpeg';
+import HomeDepot from './home-depot.png';
 
 class AvailableOrders extends React.Component {
 
@@ -35,8 +36,11 @@ class AvailableOrders extends React.Component {
         // default to walmart
         let logo = WalmartLogo;
 
-        if( order.Retailer === 'Target' ) {
+        if(order.Retailer === 'Target') {
             logo = TargetLogo;
+        }
+        else if(order.Retailer === 'Home Depot') {
+            logo = HomeDepot;
         }
 
         const expertName = this.props.expertName;
