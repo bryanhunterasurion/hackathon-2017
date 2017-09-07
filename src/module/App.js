@@ -4,6 +4,7 @@ import Customer from './customer/Customer';
 import CustomerCheckout from './customer/CustomerCheckout';
 import Technician from './technician/Technician';
 import TechnicianOrderDetail from './technician/orderDetail/OrderDetail';
+import LoadData from './seed/LoadData';
 import base from '../base';
 
 class App extends React.Component {
@@ -102,6 +103,7 @@ class App extends React.Component {
                 <Route path="/customerCheckout" component={CustomerCheckout} />
                 <Route exact path="/technician/orders" component={Technician} />
                 <Route path="/technician/orders/:orderId" component={TechnicianOrderDetail} />
+                <Route path="/data/:action" component={LoadData} />
             </div>
         )
     }
