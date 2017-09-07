@@ -1,6 +1,7 @@
 import React from 'react';
 import base from '../../base';
 import CustomerHeader from './header/CustomerHeader';
+import moment from 'moment-timezone';
 
 class Customer extends React.Component {
 
@@ -22,13 +23,14 @@ class Customer extends React.Component {
 
     const orders = { ...this.state.orders };
 
-    orders[Math.floor(Date.now())] = {
+    orders[moment().unix()] = {
       CustomerName: this.name.value,
       Address: this.address.value,
       Purchases: this.purchases.value,
       PickupAddress: this.pickupAddress.value,
       Info: this.info.value,
-      Status: 'Available'
+      Status: 'Available',
+      OrderDate: moment().tz("America/Chicago").format("LLL")
     };
 
     this.setState({ orders });
