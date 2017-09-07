@@ -72,7 +72,7 @@ class Customer extends React.Component {
               <div className="slds-form-element">
                 <label class="slds-form-element__label" for="input-id-01">Name</label>
                 <div className="slds-form-element__control">
-                  <input ref={(input) => this.name = input} type="text" id="input-id-01" className="slds-input" placeholder="Customer Name" />
+                  <input value="Barry Vandevier" ref={(input) => this.name = input} type="text" id="input-id-01" className="slds-input" placeholder="Customer Name" />
                 </div>
               </div>
               <div className="slds-form-element">
