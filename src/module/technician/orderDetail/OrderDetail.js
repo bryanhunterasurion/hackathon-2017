@@ -68,6 +68,12 @@ class OrderDetail extends React.Component {
                                     </div>
                                 </li>
                                 <li className="slds-form-element slds-hint-parent slds-border_bottom">
+                                    <span className="slds-form-element__label">Order Date</span>
+                                    <div className="slds-form-element__control">
+                                        <span className="slds-form-element__static">{order.OrderDate}</span>
+                                    </div>
+                                </li>
+                                <li className="slds-form-element slds-hint-parent slds-border_bottom">
                                     <span className="slds-form-element__label">Pickup Address</span>
                                     <div className="slds-form-element__control">
                                         <span className="slds-form-element__static">{order.PickupAddress}</span>
