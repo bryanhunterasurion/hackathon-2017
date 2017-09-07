@@ -31,42 +31,46 @@ class CustomerTracker extends React.Component {
     }
 
     render() {
-      let order;
       let timeline;
-      if(this.state.orders.length > 0) {
-        order = Object.keys(this.state.orders).reverse()[0];
-      }
+      let order;
+      let orderKey = Object.keys(this.state.orders).reverse()[0];
 
-      if(order) {
+      if(orderKey) {
+        order = this.state.orders[orderKey];
         timeline = order.timeline;
       }
-      let time1 = moment().subtract('3', 'hours');
-      let time2 = moment().subtract('2', 'hours');
-      let time3 = moment().subtract('1', 'hours');
-      let time4 = moment();
-      let format = 'h:mm:ss a';
 
-        if(!timeline) {
-          timeline = {};
-          timeline[time1.format(format)] = "Accepted";
-          timeline[time2.format(format)] = "Picking Up";
-          timeline[time3.format(format)] = "Delivering";
-          timeline[time4.format(format)] = "Complete";
-        }
+      if(!timeline) {
+        timeline = {};
+        let time1 = moment().subtract('3', 'hours');
+        let time2 = moment().subtract('2', 'hours');
+        let time3 = moment().subtract('1', 'hours');
+        let time4 = moment();
+        let format = 'h:mm:ss a';
 
-        const style = {
-          padding: "10px 10px 10px 10px"
-        };
+        timeline["Accepted"] = time1.format(format);
+        timeline["Picking Up"] = time2.format(format);
+        timeline["Delivering"] = time3.format(format);
+        timeline["Complete"] = time4.format(format);
+      }
 
-        return (
-            <div className="slds-grid slds-grid_vertical">
-                <div className="slds-container_fluid" style={style}>
-                </div>
-                <div className="slds-container_fluid" style={style}>
-                    <CustomerTimeline timeline={timeline}/>
-                </div>
-            </div>
-        );
+      order = order || {};
+
+      order.timeline = timeline;
+
+      const style = {
+        padding: "10px 10px 10px 10px"
+      };
+
+      return (
+          <div className="slds-grid slds-grid_vertical">
+              <div className="slds-container_fluid" style={style}>
+              </div>
+              <div className="slds-container_fluid" style={style}>
+                  <CustomerTimeline order={order}/>
+              </div>
+          </div>
+      );
     }
 
 }
