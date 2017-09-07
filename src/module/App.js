@@ -92,8 +92,8 @@ class App extends React.Component {
                 <Route exact path="/index.html" component={Customer} />
                 <Route path="/customer" component={Customer} />
                 <Route path="/customerCheckout" component={CustomerCheckout} />
-                <Route exact path="/technician" component={Technician} />
-                <Route path="/technician/order/:orderId" component={TechnicianOrderDetail} />
+                <Route exact path="/technician/orders" component={Technician} />
+                <Route path="/technician/orders/:orderId" component={TechnicianOrderDetail} />
             </div>
         )
     }
