@@ -2,11 +2,8 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Customer from './customer/Customer';
 import CustomerCheckout from './customer/CustomerCheckout';
-<<<<<<< HEAD
 import CustomerTracker from './customer/CustomerTracker';
-=======
 import CheckoutComplete from './customer/CheckoutComplete';
->>>>>>> 056578021bb785f0088ef874eed2dd87f7249d4e
 import Technician from './technician/Technician';
 import TechnicianOrderDetail from './technician/orderDetail/OrderDetail';
 import LoadData from './seed/LoadData';
@@ -106,11 +103,8 @@ class App extends React.Component {
                 <Route exact path="/index.html" component={Customer} />
                 <Route path="/customer" component={Customer} />
                 <Route path="/customerCheckout" component={CustomerCheckout} />
-<<<<<<< HEAD
                 <Route path="/customerTracker" component={CustomerTracker} />
-=======
                 <Route path="/checkoutComplete" component={CheckoutComplete} />
->>>>>>> 056578021bb785f0088ef874eed2dd87f7249d4e
                 <Route exact path="/technician/orders" component={Technician} />
                 <Route path="/technician/orders/:orderId" component={TechnicianOrderDetail} />
                 <Route path="/data/:action" component={LoadData} />
