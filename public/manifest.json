@@ -8,7 +8,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./technician",
+  "start_url": "./technician/orders",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Customer from './customer/Customer';
 import CustomerCheckout from './customer/CustomerCheckout';
+import CheckoutComplete from './customer/CheckoutComplete';
 import Technician from './technician/Technician';
 import TechnicianOrderDetail from './technician/orderDetail/OrderDetail';
 import base from '../base';
@@ -100,6 +101,7 @@ class App extends React.Component {
                 <Route exact path="/index.html" component={Customer} />
                 <Route path="/customer" component={Customer} />
                 <Route path="/customerCheckout" component={CustomerCheckout} />
+                <Route path="/checkoutCompete" component={CheckoutComplete} />
                 <Route exact path="/technician/orders" component={Technician} />
                 <Route path="/technician/orders/:orderId" component={TechnicianOrderDetail} />
             </div>
