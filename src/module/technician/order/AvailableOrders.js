@@ -45,6 +45,11 @@ class AvailableOrders extends React.Component {
         const isAssignedToMe = (order.ExpertName === expertName);
         const assignLinkIcon = isAssignedToMe ? "#close" : "#like";
 
+        const productImageStyle = {
+           "max-height": "300px",
+           "max-width": "300px"
+        };
+
         if(orderAvailable || isAssignedToMe) {
 
             return (
@@ -84,10 +89,13 @@ class AvailableOrders extends React.Component {
                             </div>
                         </header>
                         <div className="slds-post__content slds-text-longform">
-                            <p>Purchases: {order.Purchases}</p>
-                        </div>
-                        <div className="slds-post__content slds-text-longform">
-                            <p>Pickup Address: {order.PickupAddress}</p>
+                            <div className="slds-media slds-media_center">
+                                <div className="slds-media__body">
+                                    <span>
+                                        <img src={order.ProductImage} alt={order.Purchases}  style={productImageStyle} />
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                         <footer className="slds-post__footer">
                         </footer>
