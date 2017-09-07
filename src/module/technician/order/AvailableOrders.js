@@ -46,8 +46,8 @@ class AvailableOrders extends React.Component {
         const assignLinkIcon = isAssignedToMe ? "#close" : "#like";
 
         const productImageStyle = {
-           "max-height": "300px",
-           "max-width": "300px"
+           "maxHeight": "300px",
+           "maxWidth": "300px"
         };
 
         if(orderAvailable || isAssignedToMe) {

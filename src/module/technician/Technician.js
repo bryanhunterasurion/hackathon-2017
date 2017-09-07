@@ -25,7 +25,10 @@ class Technician extends React.Component {
 
         orders[key] = {
             Status: "Unavailable",
-            ExpertName: expertName
+            ExpertName: expertName,
+            Timeline: {
+                'Accepted': Date.now()
+            }
         };
 
         this.setState({orders}, () => {
