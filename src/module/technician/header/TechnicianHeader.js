@@ -4,6 +4,18 @@ import Logo from './soluto-logo.png';
 
 class TechnicianHeader extends React.Component {
 
+    constructor() {
+
+        super();
+
+        this.goToAvailableOrders = this.goToAvailableOrders.bind(this);
+
+    }
+
+    goToAvailableOrders() {
+        this.context.router.history.push('/technician/orders');
+    }
+
     render() {
         return (
             <header className="slds-global-header_container">
@@ -14,32 +26,14 @@ class TechnicianHeader extends React.Component {
                         </div>
                     </div>
                     <ul className="slds-global-header__item slds-grid slds-grid_vertical-align-center">
-                        {/*
-                        <li className="slds-dropdown-trigger slds-dropdown-trigger_click slds-p-horizontal_xxx-small">
-                            <button className="slds-button slds-button_icon slds-button_icon slds-button_icon-small slds-button_icon-container slds-button_icon-x-small slds-global-header__button_icon-actions slds-m-horizontal_xx-small" title="Global Actions">
-                                <svg className="slds-button__icon slds-global-header__icon" aria-hidden="true">
-                                    <use xlinkHref="symbols.svg#favorite" />
-                                </svg>
-                                <span className="slds-assistive-text">Global Actions</span>
-                            </button>
-                        </li>
                         <li className="slds-dropdown-trigger slds-dropdown-trigger_click">
-                            <button className="slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-header__button_icon" title="Help and Training">
+                            <button onClick={this.goToAvailableOrders} className="slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-header__button_icon" title="Notifications">
                                 <svg className="slds-button__icon slds-global-header__icon" aria-hidden="true">
-                                    <use xlinkHref="symbols.svg#question"></use>
+                                    <use xlinkHref="/symbols.svg#work_order_type"></use>
                                 </svg>
-                                <span className="slds-assistive-text">Help and Training</span>
+                                <span className="slds-assistive-text">Available Orders</span>
                             </button>
                         </li>
-                        <li className="slds-dropdown-trigger slds-dropdown-trigger_click">
-                            <button className="slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-header__button_icon" title="Setup">
-                                <svg className="slds-button__icon slds-global-header__icon" aria-hidden="true">
-                                    <use xlinkHref="symbols.svg#setup"></use>
-                                </svg>
-                                <span className="slds-assistive-text">Setup</span>
-                            </button>
-                        </li>
-                        */}
                         <li className="slds-dropdown-trigger slds-dropdown-trigger_click">
                             <button className="slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-header__button_icon" title="Notifications">
                                 <svg className="slds-button__icon slds-global-header__icon" aria-hidden="true">
@@ -62,5 +56,10 @@ class TechnicianHeader extends React.Component {
     }
 
 }
+
+TechnicianHeader.contextTypes = {
+    router: React.PropTypes.object
+};
+
 
 export default TechnicianHeader;
