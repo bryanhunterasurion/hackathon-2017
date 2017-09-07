@@ -43,3 +43,8 @@ body {
 .customer-form {
   margin-top: 55px;
 }
+
+.slds-icon-standard-account {
+  background-color: red;
+  background-color: green
+}
