@@ -81,7 +81,15 @@ class App extends React.Component {
                 // this.context.router.history.push(technicianViewLocation);
             }
         }
+        else {
 
+            const customerViewLocation = this.state.customerView.location;
+
+            if(currentLocation != customerViewLocation && customerViewLocation !== undefined) {
+                // this.context.router.history.push(customerViewLocation);
+            }
+
+        }
 
     }
 
