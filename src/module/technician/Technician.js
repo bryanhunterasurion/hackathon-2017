@@ -28,7 +28,9 @@ class Technician extends React.Component {
             ExpertName: expertName
         };
 
-        this.setState({orders});
+        this.setState({orders}, () => {
+            this.context.router.history.push(`/technician/orders/${key}`);
+        });
 
     }
 
@@ -81,5 +83,9 @@ class Technician extends React.Component {
     }
 
 }
+
+Technician.contextTypes = {
+    router: React.PropTypes.object
+};
 
 export default Technician;
