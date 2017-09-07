@@ -38,15 +38,28 @@ class OrderDetail extends React.Component {
 
         const order = this.state.orders[orderId];
         //style="height: 845px; max-width: 420px; background: rgb(244, 246, 249); padding: 1rem;">
+        const style = {
+            height: '845px',
+            'max-width': '420px',
+            background: 'rgb(244,246,249)',
+            padding: '1rem'
+        };
+
+
+        {style}
+        if(order == null){
+            return <p>Loading.....</p>;
+        }
+
 
         return (
 
-            <div className="demo-only slds-grid">
+            <div className="demo-only slds-grid" style={style}>
                 <div className="slds-panel slds-grid slds-grid_vertical slds-nowrap">
                     <div className="slds-form slds-form_stacked slds-grow slds-scrollable_y">
 
                         <div className="slds-panel__section">
-                            <h3 className="slds-text-heading_small slds-m-bottom_medium">Order Details</h3>
+                            <h3 className="slds-text-heading_small slds-m-bottom_medium">Order Details: {orderId}</h3>
                             <ul>
                                 <li className="slds-form-element slds-hint-parent slds-border_bottom">
                                     <span className="slds-form-element__label">Customer Name</span>
