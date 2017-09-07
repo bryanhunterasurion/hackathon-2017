@@ -35,7 +35,10 @@ class Customer extends React.Component {
 
     this.setState({ orders });
 
-    alert('order placed');
+    this.setState({}, () => {
+      this.context.router.history.push(`/checkoutComplete`);
+    });
+
   }
 
   componentWillMount() {
@@ -114,5 +117,9 @@ class Customer extends React.Component {
     );
   }
 }
+
+Customer.contextTypes = {
+  router: React.PropTypes.object
+};
 
 export default Customer;

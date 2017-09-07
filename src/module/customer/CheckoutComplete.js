@@ -1,6 +1,7 @@
 import React from 'react';
 import base from '../../base';
 import CustomerHeader from './header/CustomerHeader';
+import Checkbox from './checkbox.png';
 
 class CustomerCheckout extends React.Component {
 
@@ -16,10 +17,6 @@ class CustomerCheckout extends React.Component {
 
     event.preventDefault();
 
-    this.setState({}, () => {
-      this.context.router.history.push(`/customer`);
-    });
-
   }
 
   componentWillMount() {
@@ -30,9 +27,28 @@ class CustomerCheckout extends React.Component {
 
  render() {
 
+    const style = {
+      height: '60px'
+    }
+
+    const successStyle = {
+      padding: '10px',
+      textAlign: 'center'
+    }
+
+    const messageStyle = {
+      fontSize: '18px'
+    }
+
     return (
       <div className="slds-grid slds-grid_vertical">
-        <CustomerHeader/>
+          <div className="slds-container_fluid" style={style}>
+              <CustomerHeader/>
+          </div>
+          <div className="slds-container_fluid" style={successStyle}>
+            <img src={Checkbox} alt="" />
+            <p>Confirmation #23750237609<p/></p> <br/>
+          </div>
       </div>
     );
   }
