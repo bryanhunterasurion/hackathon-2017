@@ -67,6 +67,11 @@ class AvailableOrders extends React.Component {
                                         {order.Address}
                                     </a>
                                 </p>
+                                <p className="slds-text-body_small">
+                                    <a href="javascript:void(0);" title="Click for single-item view of this post" className="slds-text-link_reset">
+                                        {order.OrderDate}
+                                    </a>
+                                </p>
                             </div>
                             <div className="slds-media__body">
                                 <div className="slds-grid slds-grid_align-end">
@@ -79,7 +84,10 @@ class AvailableOrders extends React.Component {
                             </div>
                         </header>
                         <div className="slds-post__content slds-text-longform">
-                            <p>{order.Purchases}</p>
+                            <p>Purchases: {order.Purchases}</p>
+                        </div>
+                        <div className="slds-post__content slds-text-longform">
+                            <p>Pickup Address: {order.PickupAddress}</p>
                         </div>
                         <footer className="slds-post__footer">
                         </footer>
@@ -95,7 +103,7 @@ class AvailableOrders extends React.Component {
         return (
             <div className="slds-feed">
                 <ul className="slds-feed__list">
-                    {Object.keys(this.props.orders).map(this.renderOrder)}
+                    {Object.keys(this.props.orders).reverse().map(this.renderOrder)}
                 </ul>
             </div>
         );

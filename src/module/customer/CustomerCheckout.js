@@ -35,12 +35,12 @@ class CustomerCheckout extends React.Component {
       position: 'absolute',
       top: '110px',
       height: '65px',
-      'background-color': 'white',
+      backgroundColor: 'white',
       width: '352px',
       'margin': '0 12px 0 12px',
       'padding': '20px 20px 20px 20px',
       border: '1px solid #ccc',
-      'border-radius': '5px'
+      borderRadius: '5px'
     };
 
     return (
