@@ -1,22 +1,15 @@
 import React from 'react';
-import WalmartLogo from './walmart.jpg';
-import TargetLogo from './target.jpeg';
 
 class OrderDetail extends React.Component {
 
     constructor() {
 
         super();
-
-
-
     }
 
     handleSubmit(event,key,isAssignedToMe) {
 
         event.preventDefault();
-
-
 
     }
 
@@ -24,22 +17,10 @@ class OrderDetail extends React.Component {
 
         const order = this.props.orders[key];
 
-        // default to walmart
-        let logo = WalmartLogo;
-
-        if( order.Retailer === 'Target' ) {
-            logo = TargetLogo;
-        }
-
-        const expertName = this.props.expertName;
-
-
-
-
     }
 
     render() {
-        
+        return <p>Hello from Order Detail</p>;
     }
 
 }
