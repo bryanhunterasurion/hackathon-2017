@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Customer from './customer/Customer';
+import CustomerCheckout from './customer/CustomerCheckout';
 import Technician from './technician/Technician';
 import TechnicianOrderDetail from './technician/orderDetail/OrderDetail';
 import base from '../base';
@@ -90,6 +91,7 @@ class App extends React.Component {
                 <Route exact path="/" component={Customer} />
                 <Route exact path="/index.html" component={Customer} />
                 <Route path="/customer" component={Customer} />
+                <Route path="/customerCheckout" component={CustomerCheckout} />
                 <Route exact path="/technician" component={Technician} />
                 <Route path="/technician/order/:orderId" component={TechnicianOrderDetail} />
             </div>

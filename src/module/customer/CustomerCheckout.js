@@ -11,29 +11,22 @@ class CustomerCheckout extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    this.state = {
-      orders: {}
-    };
-
   }
 
   handleSubmit(event) {
 
     event.preventDefault();
 
-  }
-
-  componentWillMount() {
-
-    this.ref = base.syncState('orders', {
-      context: this,
-      state: 'orders'
+    this.setState({}, () => {
+      this.context.router.history.push(`/customer`);
     });
 
   }
 
+  componentWillMount() {
+  }
+
   componentWillUnmount() {
-    base.removeBinding(this.ref);
   }
 
  render() {
@@ -64,5 +57,9 @@ class CustomerCheckout extends React.Component {
     );
   }
 }
+
+CustomerCheckout.contextTypes = {
+  router: React.PropTypes.object
+};
 
 export default CustomerCheckout;
